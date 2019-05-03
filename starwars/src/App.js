@@ -29,10 +29,10 @@ class App extends Component {
         throw new Error(err);
       });
   };
-  
+//toggleComplete and clear Complete are experimental. Cant get em working yet.
   toggleComplete = id => {
     this.setState({
-      todos: this.state.todos.map(item => {
+      starwarsChars: this.state.starwarsChars.map(item => {
         if (id === item.id) {
           return {
             ...item,
@@ -44,6 +44,17 @@ class App extends Component {
       })
     });
   };
+
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      todos: this.state.starwarsChars.filter(item => {
+        return !item.completed;
+      })
+    });
+  };
+
+
   render() {
     return (
 
