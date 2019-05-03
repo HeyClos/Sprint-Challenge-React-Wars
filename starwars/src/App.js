@@ -5,7 +5,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: []
+      starwarsChars: [
+        {
+          name: "Han Solo",
+          id: 1
+        }
+      ]
     };
   }
 
@@ -33,6 +38,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <StarWarsList />
       </div>
     );
   }
