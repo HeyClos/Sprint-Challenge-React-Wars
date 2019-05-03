@@ -1,16 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import StarWarsList from "./components/StarWarsList";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      starwarsChars: [
-        {
-          name: "Han Solo",
-          id: 1
-        }
-      ]
+      starwarsChars: []
     };
   }
 
@@ -33,12 +29,28 @@ class App extends Component {
         throw new Error(err);
       });
   };
-
+  
+  toggleComplete = id => {
+    this.setState({
+      todos: this.state.todos.map(item => {
+        if (id === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        } else {
+          return item;
+        }
+      })
+    });
+  };
   render() {
     return (
+
       <div className="App">
         <h1 className="Header">React Wars</h1>
-        <StarWarsList />
+        <StarWarsList starwarsChars={this.state.starwarsChars} toggleComplete={this.toggleComplete} />
+        
       </div>
     );
   }

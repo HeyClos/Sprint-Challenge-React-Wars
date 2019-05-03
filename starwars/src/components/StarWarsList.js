@@ -1,12 +1,15 @@
 import React from "react";
-import Todo from "./StarWars";
+import StarWars from "./StarWars";
+// We are already getting data through the api, just render it here using this.
+// Do I pass the api's info here or do i pass this component's info back to my app.js?
+// or Both?
 
 const StarWarsList = props => {
   console.log(props);
   return (
     <div>
-      {props.todos.map(todo => (
-        <Todo key={todo.id} todo={todo} toggleComplete={props.toggleComplete} />
+      {props.starwarsChars.map(starwars => (
+        <StarWars key={starwars.id} starwars={starwars} toggleComplete={props.toggleComplete} />
       ))}
     </div>
   );

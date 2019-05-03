@@ -4,10 +4,10 @@ const StarWars = props => {
   console.log(props);
   return (
     <h2
-      className={`${props.todo.completed ? "linethrough" : null}`}
-      onClick={() => props.toggleComplete(props.todo.id)}
+      className={`${props.starwars.completed ? "linethrough" : null}`}
+      onClick={() => props.toggleComplete(props.starwars.id)}
     >
-      {props.todo.task}
+      {props.starwars.name}
     </h2>
   );
 };
