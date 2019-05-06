@@ -1,5 +1,7 @@
 import React from "react";
 import StarWars from "./StarWars";
+import './StarWars.css'
+
 // We are already getting data through the api, just render it here using this.
 // Do I pass the api's info here or do i pass this component's info back to my app.js?
 // or Both?
