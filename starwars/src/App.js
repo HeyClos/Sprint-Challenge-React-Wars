@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import StarWarsList from "./components/StarWarsList";
+
+import './components/StarWars.css'
 
 class App extends Component {
   constructor() {
@@ -28,11 +31,39 @@ class App extends Component {
         throw new Error(err);
       });
   };
+//toggleComplete and clear Complete are experimental. Cant get em working yet.
+  toggleComplete = id => {
+    this.setState({
+      starwarsChars: this.state.starwarsChars.map(item => {
+        if (id === item.id) {
+          return {
+            ...item,
+            completed: !item.completed
+          };
+        } else {
+          return item;
+        }
+      })
+    });
+  };
+
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      todos: this.state.starwarsChars.filter(item => {
+        return !item.completed;
+      })
+    });
+  };
+
 
   render() {
     return (
+
       <div className="App">
         <h1 className="Header">React Wars</h1>
+        <StarWarsList className="starWarsList" starwarsChars={this.state.starwarsChars} toggleComplete={this.toggleComplete} />
+        
       </div>
     );
   }

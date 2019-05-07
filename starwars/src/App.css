@@ -1,8 +1,19 @@
 .App {
   text-align: center;
+  text-shadow: 4px 4px 15px black;
+  border: 2px dotted grey;
+  letter-spacing: 6px;
+  color: yellow
 }
 .Header {
   color: #443e3e;
   text-shadow: 1px 1px 5px #fff;
+  border: 2px dotted grey;
+
 }
+
+.starWarsList {
+  border: 2px dotted grey;
+}
+
 /* write your parent styles in here for your App.js */
