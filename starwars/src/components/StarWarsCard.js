@@ -1,39 +1,32 @@
 import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card } from 'semantic-ui-react'
 
-const CardExampleCard = () => (
+const StarWarsCard = (props) => (
   <Card>
-    <Image src='https://react.semantic-ui.com/images/avatar/large/matthew.png' wrapped ui={false} />
     <Card.Content>
-      <Card.Header>Matthew</Card.Header>
+      <Card.Header>{props.name}</Card.Header>
       <Card.Meta>
-        <span className='date'>Joined in 2015</span>
+        <span className='date'>{props.gender}</span>
       </Card.Meta>
       <Card.Description>
-        Matthew is a musician living in Nashville.
+      <p>Birth year:</p>{props.birth_year}
       </Card.Description>
-    </Card.Content>
-    <Card.Content extra>
-      <a>
-        <Icon name='user' />
-        22 Friends
-      </a>
     </Card.Content>
   </Card>
 )
 
-export default CardExampleCard
+export default StarWarsCard;
 
-export const StarWarsCard = (props) => {
+// export const StarWarsCard = (props) => {
   
-    return (
-      <div>
-         {props.name}
-         {props.gender}
-         {props.birth_year}
-      </div>
+//     return (
+//       <div>
+//          {props.name}
+//          {props.gender}
+//          {props.birth_year}
+//       </div>
       // bring semantic ui see TK: Thursday see 
       // import different parts 
-    );
-  };
+  //   );
+  // };
   

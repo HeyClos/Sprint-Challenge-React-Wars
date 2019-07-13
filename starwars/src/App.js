@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {StarWarsCard} from './components/StarWarsCard'
+import StarWarsCard from './components/StarWarsCard'
 import axios from 'axios';
 import 'semantic-ui-css/semantic.min.css'
 import './App.css';
@@ -28,7 +28,10 @@ const App = () => {
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      {swCharacters.map(char => <StarWarsCard name={char.name} gender={char.gender} birth_year={char.birth_year} /> )} 
+      <div className="Card">
+        {swCharacters.map(char => <StarWarsCard name={char.name} gender={char.gender} birth_year={char.birth_year} /> )}
+      </div>
+      
     </div> 
     //IS THIS REALLY ALL THE CODE I NEED FOR THIS TO RENDER?!? DONT I NEED TERNERIES & COMPONENTS?
   );
